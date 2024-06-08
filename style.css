@@ -1,19 +1,225 @@
+:root {
+    --blue: #30588C;
+    --old-pink: #7e6792;
+    --bright-white: #f2f2f2;
+    --pink: #c174b6;
+    --gray: #7c7096;
+    --background: #d7cbdf;
+    --text-color: black;
+    --inverted-text-color: white;
+}
+
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --blue: #30588C;
+        --black: #00010D;
+        --bright-pink: #A63F8A;
+        --light-pink: #732959;
+        --background: #401C33;
+        --text-color: white;
+        --inverted-text-color: black;
+    }
+} */
+
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Exo 2", sans-serif;
+    color: var(--text-color);
 }
 
 .icon {
     width: 20px;
+    height: 20px;
+}
+
+.user-icon {
+    width: 40px;
+    border-radius: 20px;
+}
+
+.big {
+    width: 60px;
+    border-radius: 30px;
 }
 
 body {
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr;
+    background-color: var(--background);
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 0.7fr 5fr;
+}
+
+.nav {
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--bright-white);
 }
 
 .search {
     display: grid;
-    grid-template-columns: 20px 4fr 20px 50px 1fr;
+    grid-template: 1fr / 2rem 3fr 2rem 3rem 0.8fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-box {
+    background-color: rgb(211, 211, 211);
+    border-radius: 15px;
+    width: 30vw;
+    min-width: 180px;
+    height: 1rem;
+    border: none;
+    padding: 7px 14px;
+}
+
+.user-details {
+    display: grid;
+    grid-template-columns: 60px 0.8fr repeat(3, 4rem);
+    align-items: center;
+    gap: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 15px;
+    /* background-color: var(--background); */
+    padding: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template: 1fr / repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    height: 200px;
+    background-color: var(--bright-white);
+    padding: 15px;
+    border-radius: 20px;
+    border-left: 5px solid var(--blue);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    box-shadow: 3px 3px 10px var(--gray);
+    transition: 300ms;
+}
+
+.card:hover {
+    background-color: var(--gray);
+    border-left: 5px solid var(--pink);
+}
+
+.part:last-child {
+    display: grid;
+    /* grid-template-rows: repeat(auto-fit, minmax(200px, 1fr)); */
+    gap: 20px;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+ul > li {
+    font-weight: bold;
+    display: grid;
+    grid-template: 1fr / 30px 1fr;
+    align-items: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.grid-dash {
+    display: grid;
+    grid-template: 1fr / 50px 1fr;
+    align-items: center;
+    align-items: center;
+}
+
+.dashboard * {
+    padding: 0.3rem;
+}
+
+.dashboard {
+    background-color: var(--pink);
+    display: grid;
+    align-content: start;
+    gap: 15px;
+    padding: 25px;
+}
+
+.dashboard > div {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    font-size: 10px;
+    padding: 0;
+}
+
+button {
+    background-color: var(--blue);
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: var(--inverted-text-color);
+    transition: 300ms;
+}
+
+.icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-self: end;
+    align-self: end;
+    gap: 8px;
+}
+
+.box {
+    /* padding: 25px; */
+    margin-top: 15px;
+    background-color: var(--bright-white);
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px var(--gray);
+}
+
+/* .long-card {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(100px, 1fr));
+} */
+
+.small-content {
+    padding: 25px;
+    border-bottom: 1px solid var(--background);
+}
+
+.user-card {
+    padding: 20px;
+    display: grid;
+    grid-template: 1fr / 40px 1fr;
+    gap: 7px;
+}
+
+.long-card :last-child {
+    border-bottom: none;
+}
+
+.big {
+    font-size: 1.3rem;
+}
+
+.small-content > p {
+    font-size: 0.85rem;
+}
+
+button:hover {
+    background-color: var(--pink);
 }
